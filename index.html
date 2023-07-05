@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interactive strange attractor with webR</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background: black;
+        color: white;
+        font-family: sans-serif;
+      }
+      #canvas {
+        max-width: 100vw;
+        max-height: 512px;
+        display: none;
+        margin: auto;
+      }
+      .center {
+        text-align: center;
+      }
+      .container {
+        max-width: 720px;
+        padding: 0 20px;
+        margin: auto;
+      }
+      .container p {
+        text-align: left;
+      }
+      #loading {
+        margin-top: 20px;
+        font-size: 30pt; 
+      }
+      a:link, a:visited {
+        color: rgb(192, 192, 255);
+      }
+      a:hover, a:active {
+        color: rgb(155, 155, 253);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div id="loading">webR is loading...</div>
+      <canvas id="canvas" width="1024" height="1024"></canvas>
+      <div class="container">
+        <h1>Interactive Clifford Attractors with webR</h1>
+        <p>Once webR has been loaded into this page, a visualisation of a <a href="http://paulbourke.net/fractals/clifford/">Clifford attractor</a> should be drawn above. This is a type of mathematical object known as a <a href="https://en.wikipedia.org/wiki/Attractor">strange attractor</a>, with chaotic and fractal properties.</p>
+        <p>
+          The governing equations are,
+
+          \[\displaylines{x_{n+1} = \sin(ay_n) + c \cos(a x_n),\\y_{n+1} = \sin(bx_n) + d \cos(b y_n).}\]
+
+          where \((x_n, y_n)\) are points on the attractor and \(a\), \(b\), \(c\) and \(d\) are parameters. The image is drawn by repeated iteration with the colour defined by the angle between successive points on the attractor.
+        </p>
+        <p>The process in this page is interactive, and the parameters governing the evolution of the system can be tweaked using the settings in the top left of the page.</p>
+      </div>
+    </div>
+    <script src="stats.min.js"></script>
+    <script src="dat.gui.min.js"></script>
+    <script src="draw.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </body>
+</html>
