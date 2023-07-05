@@ -52,7 +52,7 @@ import('https://webr.r-wasm.org/latest/webr.mjs').then(async ({ WebR }) => {
     webR.objs.globalEnv.bind('colour', settings.Colour);
     clearPlot();
   });
-  gui.add(settings, 'Alpha', 0, 0.3, 0.01).onChange(async () => {
+  gui.add(settings, 'Alpha', 0.01, 0.2, 0.01).onChange(async () => {
     await webR.objs.globalEnv.bind('alpha', settings.Alpha);
     await webR.evalRVoid('map <- rainbow(100, alpha=alpha)');
     clearPlot();
